@@ -1,0 +1,33 @@
+Chương trình Kruskal.c:
+- Hàm find:
+Mục đích: Tìm tập hợp con (hoặc nhóm) mà đỉnh vertexno thuộc về. 
+Tham số: belongs[] là mảng lưu trữ thông tin về tập hợp con của mỗi đỉnh, vertexno là đỉnh cần tìm tập hợp con.
+Trả về: Số tập hợp con mà đỉnh vertexno thuộc về.
+- Hàm applyUnion:
+Mục đích: Hợp nhất hai tập hợp con lại với nhau.
+Tham số: belongs[] là mảng lưu trữ thông tin về tập hợp con của mỗi đỉnh, c1 và c2 là hai tập hợp con cần hợp nhất.
+Hoạt động: Các đỉnh thuộc tập hợp con c2 sẽ được chuyển sang tập hợp con c1.
+- Hàm sort:
+sắp xếp cách cạnh trong elist theo thứ tự tăng dần bằng phương pháp Bubble sort.
+- Hàm Kruskalalgo:
+Tạo danh sách các cạnh từ ma trận kề Graph.
+Sắp xếp các cạnh theo thứ tự trọng số tăng dần.
+Khởi tạo mỗi đỉnh thuộc một tập hợp con riêng biệt.
+Duyệt qua các cạnh đã sắp xếp, nếu cạnh không tạo thành chu trình (tức là hai đỉnh thuộc các tập hợp con khác nhau), thì thêm cạnh vào cây khung và hợp nhất hai tập hợp con đó lại.
+
++ Chương trình Kruskal.cpp
+- Hàm find:
+Mục đích: Tìm tập hợp con (hoặc nhóm) mà đỉnh i thuộc về.
+Tham số: i là đỉnh cần tìm tập hợp con.
+Hoạt động: Sử dụng kỹ thuật tìm cha của đỉnh cho đến khi gặp cha của chính nó (điểm đại diện của tập hợp con).
+Trả về: Số tập hợp con mà đỉnh i thuộc về.
+- Hàm union1:
+Mục đích: Hợp nhất hai tập hợp con lại với nhau.
+Tham số: i và j là hai đỉnh cần hợp nhất.
+Hoạt động: Tìm tập hợp con của hai đỉnh i và j, sau đó gán cha của tập hợp con của i bằng cha của tập hợp con của j.
+- Hàm Kruskal:
+Khởi tạo mỗi đỉnh thuộc một tập hợp con riêng biệt.
+Bao gồm các cạnh có trọng số nhỏ nhất từng cái một, miễn là chúng không tạo chu trình.
+Duyệt qua ma trận trọng số để tìm cạnh có trọng số nhỏ nhất mà không tạo thành chu trình.
+Thêm cạnh đó vào cây khung, hợp nhất các tập hợp con của hai đỉnh nối bởi cạnh đó.
+Tiếp tục cho đến khi cây khung chứa n-1 cạnh.
